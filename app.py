@@ -51,6 +51,13 @@ class BotControl(web.View):
                         elif any(["thứ 7" in message_text.lower(), "Thứ 7" in message_text.lower()]):
                             for i in range(const):
                                await self.send_message(sender_id, geturl[i]['THỨ 7'])
+						elif any(["hello" in message_text.lower(), "chào" in message_text.lower(), "hi" in message_text.lower(),
+                            "alo" in message_text.lower(), "ơi" in message_text.lower()]):
+                            await self.send_message(sender_id, 'Chào Bạn :)')
+                        elif any(["ai tạo" in message_text.lower(), "ai sáng lập" in message_text.lower(), "ai lập trình" in message_text.lower(),
+                            "bạn là gì" in message_text.lower(), "mày là gì" in message_text.lower()]):                               
+                            await self.send_message(sender_id, 'Mình là Chatbot được lập trình bằng ngôn ngữ python')
+                            await self.send_message(sender_id, 'Ngô Thuận Dzai Đã Tạo Ra Mình <3')
                         
                         else:
                             await self.send_message(sender_id, "Bạn dễ thương gì ấy ơi, Bạn Nói Gì Mình Không Hiểu ?")
